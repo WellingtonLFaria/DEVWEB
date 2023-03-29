@@ -1,3 +1,7 @@
-# DEVWEB
+# Desenvolvimento Web
 
-Repositório da matéria
+Repositório da matéria.
+
+## Diretórios
+- Desafio01/
+- Desafio02/
