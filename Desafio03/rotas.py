@@ -1,5 +1,9 @@
 from app import *
-from db import adicionar_contato
+from db import adicionar_contato, selecionar_usuarios
+
+@app.route("/")
+def index():
+    return redirect("/home")
 
 @app.route('/home')
 def home():
@@ -22,3 +26,8 @@ def contato():
 
         return "Sucesso"
     return render_template('contato.html')
+
+@app.route("/users")
+def users():
+    userDetails = selecionar_usuarios()
+    return render_template("users.html", userDetails=userDetails)

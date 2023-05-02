@@ -16,3 +16,10 @@ def adicionar_contato(email, assunto, descricao):
     db.connection.commit()
 
     cursor.close()
+
+def selecionar_usuarios():
+    cursor = db.connection.cursor()
+    users = cursor.execute("SELECT * FROM contatos")
+    if users > 0:
+        userDetails = cursor.fetchall()
+        return userDetails

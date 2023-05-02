@@ -93,3 +93,13 @@ button {
     width: 150px;
     height: 50px;
 }
+
+table, th, td {
+    text-align: center;
+    border: 1px solid black;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
