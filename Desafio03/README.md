@@ -1,8 +1,8 @@
-# Desafio 02 
+# Desafio 03
 
 ## Objetivo
 
-Hospedar o desafio 01 no flask, mini-framework do Python.
+Criar um banco de dados para armazenar as informações enviadas na página de contato a partir do Desafio02.
 
 ## Diretórios
 
@@ -15,8 +15,10 @@ Hospedar o desafio 01 no flask, mini-framework do Python.
 ## Arquivos
 - app.py --> Instância do flask.
 - rotas.py --> Onde foram programadas as rotas do sistema.
+- db.py --> Script que realiza o armazenamento e consulta dos dados enviados para o servidor.
 - requirements.txt --> Todos os requerimentos para rodar a aplicação.
 - .gitignore --> Todos os arquivos que devem ser ignorados pelo git.
+- criacao_do_banco.sql --> Script SQL que mostra como criar o banco de dados, usando MYSQL.
 
 ## Requerimentos
     pip install -r requirements.txt
