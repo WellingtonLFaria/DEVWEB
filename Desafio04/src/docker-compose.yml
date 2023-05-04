@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:  
+  db:
+    image: mysql:latest # use latest version of mysql
+    container_name: db # add a name for the container
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    environment: # add default values, see docs for more info.
+      MYSQL_USER: unes
+      MYSQL_ROOT_PASSWORD: unes
+      MYSQL_PASSWORD: unes
+      MYSQL_DATABASE: unes # create this database on startup
+    volumes:
+      - .docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+      - my-db:/var/lib/mysql
+    ports:
+      - '3306:3306'
+  
+  app:
+        container_name: myapp
+        links:
+            - "db"
+        build: ./
+        ports:
+            - "5000:5000"
+
+volumes: # add persistent data even if container is removed.
+  my-db:
