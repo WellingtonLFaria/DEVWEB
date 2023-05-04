@@ -6,11 +6,12 @@ Hospedar o desafio 01 no flask, mini-framework do Python.
 
 ## Diretórios
 
-- static/ --> Todos os arquivos estáticos do sistema.
-    - css/ --> Arquivos .css
-    - imagens/ --> Arquivos de imagem.
-
-- templates/ --> Todos os arquivos .html do sistema.
+- src/ --> Aplicação
+    - static/ --> Todos os arquivos estáticos do sistema.
+        - css/ --> Arquivos .css
+        - imagens/ --> Arquivos de imagem.
+    
+    - templates/ --> Todos os arquivos .html do sistema.
 
 ## Arquivos
 - app.py --> Instância do flask.
@@ -19,7 +20,7 @@ Hospedar o desafio 01 no flask, mini-framework do Python.
 - .gitignore --> Todos os arquivos que devem ser ignorados pelo git.
 
 ## Requerimentos
-    pip install -r requirements.txt
+    pip install -r src\requirements.txt
 
 ## Rodar o sistema
-    flask run
+    cd src | flask run

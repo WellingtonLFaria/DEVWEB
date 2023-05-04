@@ -6,11 +6,12 @@ Criar um banco de dados para armazenar as informações enviadas na página de c
 
 ## Diretórios
 
-- static/ --> Todos os arquivos estáticos do sistema.
-    - css/ --> Arquivos .css
-    - imagens/ --> Arquivos de imagem.
-
-- templates/ --> Todos os arquivos .html do sistema.
+- src/ --> Aplicação
+    - static/ --> Todos os arquivos estáticos do sistema.
+        - css/ --> Arquivos .css
+        - imagens/ --> Arquivos de imagem.
+    
+    - templates/ --> Todos os arquivos .html do sistema.
 
 ## Arquivos
 - app.py --> Instância do flask.
@@ -21,7 +22,7 @@ Criar um banco de dados para armazenar as informações enviadas na página de c
 - criacao_do_banco.sql --> Script SQL que mostra como criar o banco de dados, usando MYSQL.
 
 ## Requerimentos
-    pip install -r requirements.txt
+    pip install -r src\requirements.txt
 
 ## Rodar o sistema
-    flask run
+    cd src | flask run
