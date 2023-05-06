@@ -28,3 +28,19 @@ Upar a aplicação para AWS.
 
 ## Rodar o sistema no máquina local
     cd src | flask run
+
+# Rodar o sistema utilizando Docker
+
+**Primeiro envie todos os arquivos da pasta /src para a máquina na AWS**
+
+## Instalando Docker e Docker Compose
+
+    sudo apt update
+    sudo apt install docker.io
+    sudo apt install docker-compose
+
+## Executando o Docker Compose
+
+**No diretório em que se encontra o arquivo docker-compose.yml**
+
+    docker-compose -f docker-compose.yml up

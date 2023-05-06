@@ -1,6 +1,4 @@
-create database unes;
-
-use unes;
+use db;
 
 create table contatos(
 	email varchar(60) not null unique,
