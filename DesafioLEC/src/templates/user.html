@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>{{ username }}</title>
+{% endblock %}
+
+{% block conteudo %}
+<main class="form">
+    <p>Logado com: {{username}}</p>
+    {% if username in admins %}
+        <p><a href="/users">CONTATOS</a></p>
+    {% endif %}
+    <form action="/user" method="post">
+        <input type="submit" value="Sair" name="sair" id="sair">
+    </form>
+</main>
+{% endblock %}

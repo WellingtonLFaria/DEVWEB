@@ -1,34 +1,36 @@
 from app import *
 
-app.config["MYSQL_Host"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "fatec"
-app.config["MYSQL_DB"] = "unes"
+config = {
+        'user': 'root',
+        'password': 'Motoca007',
+        'host': 'localhost',
+        'port': '3306',
+        'database': 'unes'
+    }
 
-db = MySQL(app)
+db = mysql.connector.connect(**config)
 
 def adicionar_contato(email, assunto, descricao):
     """Adiciona um contato a base de dados
     """
-    cursor = db.connection.cursor()
+    cursor = db.cursor(buffered=True)
     cursor.execute(f"INSERT INTO contatos(email, assunto, descricao) VALUES ('{email}', '{assunto}', '{descricao}')")
 
-    db.connection.commit()
+    db.commit()
 
     cursor.close()
 
 def selecionar_usuarios():
-    cursor = db.connection.cursor()
+    cursor = db.cursor(buffered=True)
     users = cursor.execute("SELECT * FROM contatos")
-    if users > 0:
-        userDetails = cursor.fetchall()
-        return userDetails
+    userDetails = cursor.fetchall()
+    return userDetails
 
 def cadastro(username, passwd):
-    cursor = db.connection.cursor()
+    cursor = db.cursor(buffered=True)
     try:
         cursor.execute(f"INSERT INTO users(username, passwd) VALUES ('{username}', '{passwd}')")
-        db.connection.commit()
+        db.commit()
         cursor.close()
         return True
     except:
@@ -36,7 +38,7 @@ def cadastro(username, passwd):
 
 def login(username, passwd):
     login = False
-    cursor = db.connection.cursor()
+    cursor = db.cursor(buffered=True)
     cursor.execute("SELECT * FROM users")
     users = cursor.fetchall()
     for user in users:

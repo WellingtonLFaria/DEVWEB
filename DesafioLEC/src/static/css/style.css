@@ -18,7 +18,7 @@ div.topo > p {
     left: 89%;
     transform: translate(-50%, -50%);
     display: inline;
-    width: 200px;
+    width: 300px;
 }
 
 div.topo > img {
@@ -94,6 +94,7 @@ button {
     height: 50px;
 }
 
+/* TABELA DOS CONTATOS CADASTRADOS */
 table, th, td {
     text-align: center;
     border: 1px solid black;
@@ -102,4 +103,43 @@ table, th, td {
 .flex {
     display: flex;
     justify-content: center;
+}
+
+/* FORMULÁRIO LOGIN E CADASTRO */
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form > div {
+    margin: 5px;
+}
+
+form > div > label {
+    display: inline-block;
+    width: 130px;
+}
+
+form > div > input {
+    display: inline-block;
+    width: 200px;
+}
+
+form > button {
+    width:50%;
+}
+
+/* Ícone usuário nav bar */
+#user {
+    display: inline;
+    width: 20px;
+    height: 20px;
 }

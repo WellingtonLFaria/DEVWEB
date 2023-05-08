@@ -47,13 +47,10 @@ def loginroute():
         passwd = request.form["passwd"]
         logina, username = login(username=username, passwd=passwd)
         if logina:
-            return "Login realizado!"
+            return redirect('/user')
         else:
             return "Login não realizado!"
-    else:
-        logina = False
-        
-    return render_template("lec.html", lec="login")
+    return render_template("lec.html", lec="login", login=True)
 
 @app.route("/cadastro", methods=["GET", "POST"])
 def cadastroroute():
@@ -62,7 +59,23 @@ def cadastroroute():
         passwd = request.form["passwd"]
         cadastroa = cadastro(username=username, passwd=passwd)
         if cadastroa:
-            return "Cadastro realizado!"
+            return redirect('/user')
         else:
             return "Cadastro não realizado!"
-    return render_template("lec.html", lec="cadastro")
+    return render_template("lec.html", lec="cadastro", login=False)
+
+@app.route('/user', methods=["GET", "POST"])
+def user():
+    global logina
+    global username
+    if request.method == "GET":
+        if logina:
+            return render_template("user.html", username=username, admins=admins)
+        else:
+            return redirect("/login")
+    else:
+        sair = request.form['sair']
+        if sair:
+            logina = False
+            username = ""
+            return redirect('/home')

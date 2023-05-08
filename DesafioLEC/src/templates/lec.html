@@ -1,17 +1,27 @@
 {% extends "base.html" %}
 
-{% block title %}
+{% block titulo %}
 <title>{{ lec }}</title>
 {% endblock %}
 
 {% block conteudo %}
-<form action="/{{ lec }}" method="post">
-    <label for="username">Nome de Usuário:</label>
-    <input type="text" name="username" id="username">
+<div class="form">
+    <h1>{{ lec.upper() }}</h1>
+    <form action="/{{ lec }}" method="post">
+        <div>
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" name="username" id="username">
+        </div>
+    
+        <div>
+            <label for="passwd">Senha:</label>
+            <input type="password" name="passwd" id="passwd">
+        </div>
 
-    <label for="passwd">Senha:</label>
-    <input type="password" name="passwd" id="passwd">
-
-    <button type="submit">{{ lec }}</button>
-</form>
+        <button type="submit">{{ lec }}</button>
+    </form>
+    {% if login == True %}
+    <p><a href="/cadastro">Crie uma conta</a></p>
+    {% endif %}
+</div>
 {% endblock %}
