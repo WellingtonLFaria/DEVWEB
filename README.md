@@ -7,3 +7,5 @@ Repositório da matéria.
 - Desafio01/
 - Desafio02/
 - Desafio03/
+- Desafio04/
+- DesafioLEC/
