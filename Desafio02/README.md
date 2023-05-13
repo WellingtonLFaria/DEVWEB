@@ -1,26 +1,32 @@
-# Desafio 02 
+# ***Desafio 02***
 
-## Objetivo
+## **Objetivo**
 
 Hospedar o desafio 01 no flask, mini-framework do Python.
 
-## Diretórios
+## **Diretórios**
 
-- src/ --> Aplicação
-    - static/ --> Todos os arquivos estáticos do sistema.
-        - css/ --> Arquivos .css
-        - imagens/ --> Arquivos de imagem.
+- [src/](src/) > Aplicação
+    - [static/](src/static/) > Todos os arquivos estáticos do sistema.
+        - [css/](src/static/css/) > Arquivos .css
+        - [imagens/](src/static/imagens/) > Arquivos de imagem.
     
-    - templates/ --> Todos os arquivos .html do sistema.
+    - [templates/](src/templates/) > Todos os arquivos .html do sistema.
 
-## Arquivos
-- app.py --> Instância do flask.
-- rotas.py --> Onde foram programadas as rotas do sistema.
-- requirements.txt --> Todos os requerimentos para rodar a aplicação.
-- .gitignore --> Todos os arquivos que devem ser ignorados pelo git.
+## **Arquivos**
 
-## Requerimentos
-    pip install -r src\requirements.txt
+- [app.py](src/app.py) > Instância do flask.
+- [rotas.py](src/rotas.py) > Onde foram programadas as rotas do sistema.
+- [requirements.txt](src/requirements.txt) > Todos os requerimentos para rodar a aplicação.
 
-## Rodar o sistema
-    cd src | flask run
+## **Requerimentos**
+
+```bash 
+pip install -r src/requirements.txt
+```
+
+## **Rodar o sistema**
+
+```bash
+cd src | flask run
+```
